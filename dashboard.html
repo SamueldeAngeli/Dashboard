@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Multi-Bot</title>
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+  <div id="login-screen" class="screen">
+    <div class="login-card">
+      <div class="login-badge">Dashboard Hub</div>
+      <h1>Painel multi-bot</h1>
+      <p>Entre com um usuario do painel. O acesso pode ser `admin` ou `viewer`.</p>
+      <div class="field">
+        <label for="login-user">Usuario</label>
+        <input id="login-user" type="text" autocomplete="username" placeholder="admin">
+      </div>
+      <div class="field">
+        <label for="login-pass">Senha</label>
+        <input id="login-pass" type="password" autocomplete="current-password" placeholder="••••••••">
+      </div>
+      <button class="btn btn-primary" id="login-btn" type="button">Entrar</button>
+      <p class="helper">Altere `ADMIN_PASSWORD` e `VIEWER_PASSWORD` no Render antes de usar em producao.</p>
+      <p class="error-text" id="login-error"></p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-kicker">Discord Ops</div>
+        <h2>Dashboard Hub</h2>
+        <p id="brand-subtitle">Controle operacional, leitura e execucao remota.</p>
+      </div>
+
+      <div class="session-card">
+        <div class="mini-label">Sessao</div>
+        <div class="session-name" id="session-name">-</div>
+        <div class="session-row">
+          <span class="pill" id="session-role">viewer</span>
+          <button class="link-btn" id="logout-btn" type="button">Sair</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="bot-select">Bot ativo</label>
+        <select id="bot-select"></select>
+      </div>
+
+      <div id="bot-mini-list" class="mini-list"></div>
+      <nav id="page-nav" class="page-nav"></nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <div class="mini-label">Bot conectado</div>
+          <h1 id="bot-title">-</h1>
+          <p id="bot-description">Sem descricao.</p>
+        </div>
+        <div class="topbar-actions">
+          <div class="status-box">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="bot-status">offline</span>
+          </div>
+          <button class="btn btn-secondary" id="refresh-btn" type="button">Atualizar</button>
+        </div>
+      </header>
+
+      <section id="banner"></section>
+      <section id="page-content" class="page-content"></section>
+    </main>
+  </div>
+
+  <script src="/dashboard-app.js"></script>
+</body>
+</html>

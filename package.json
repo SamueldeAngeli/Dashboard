@@ -1,12 +1,16 @@
 {
-  "name": "painel-farm",
+  "name": "dashboard-multi-bot",
   "version": "1.0.0",
-  "main": "server.js",
+  "private": true,
+  "type": "commonjs",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "express": "^4.21.2"
   }
 }
